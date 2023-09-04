@@ -7,18 +7,25 @@ export const BasketProvider = ({ children }) => {
   const [items, setValue] = useState(() => []);
 
   useEffect(() => {
-    console.log("basketitems", items);
+    // console.log("basketitems", items);
   }, [items]);
 
   const addBetToBasket = useCallback(
-    ({ bet }) =>
-      setValue((items) => {
-        return items.concat(bet);
+    (item, bet) =>
+      setValue((prev) => {
+        console.log("item", item);
+        console.log("bet", bet);
+        console.log("prev", prev);
       }),
     []
   );
+  const isSelected = useCallback(
+    (bet, odds) =>
+      items.some((item) => bet.C === item.bet.C && odds === item.prop),
+    [items]
+  );
   return (
-    <Context.Provider value={{ items, addBetToBasket }}>
+    <Context.Provider value={{ items, addBetToBasket, isSelected }}>
       {children}
     </Context.Provider>
   );

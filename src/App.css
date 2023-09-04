@@ -125,35 +125,26 @@ table {
 /*Finish Reset Css*/
 
 .table-head {
-  display: block;
-  position: fixed;
+  height: 40px;
+  position: sticky;
   top: 0;
-  width: 100%;
   background: #c6c1c1;
   border-top: 0px;
 }
-
-.table-head,
-tr {
-  height: 40px;
+.table-head div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
-table,
-th,
-td {
+.table-head div div {
+  margin: auto;
   border: 1px solid black;
 }
-
-tr td:last-child {
-  width: 1%;
-  white-space: nowrap;
-}
-
-.table-head,
-tr,
-td {
-  border-top: none;
-}
-.zero-td {
-  top: 40px;
+.container-items div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }

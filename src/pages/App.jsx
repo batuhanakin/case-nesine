@@ -16,26 +16,26 @@ const App = () => {
       setLoading(false);
     });
   }, []);
-  const selectItem = (index) => {
+  const selectItem = (index, bet) => {
     console.log("index", bets[index]);
-    addBetToBasket({ bet: bets[index] });
+    addBetToBasket(bets[index], bet);
   };
 
   return loading ? (
     <div>Loading...</div>
   ) : (
     <div>
-      <table style={{ width: "100%" }}>
-        <thead className="table-head">
-          <TableHeader count={bets.length} />
-        </thead>
-        {bets.map((item, index) => (
-          <tbody key={index} className={index === 0 ? "zero-td" : undefined}>
+      <div style={{ width: "100%" }}>
+        <div className="table-head">
+          <TableHeader count={bets?.length} />
+        </div>
+        {bets?.map((item, index) => (
+          <div key={index} className="container-items">
             <TableHeader D={item.D} DAY={item.DAY} LN={item.LN} index={index} />
             <TableContent item={item} selectBet={selectItem} index={index} />
-          </tbody>
+          </div>
         ))}
-      </table>
+      </div>
     </div>
   );
 };

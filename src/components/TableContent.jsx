@@ -3,7 +3,7 @@ import { TableCell } from "./TableCell";
 
 export const TableContent = ({ item, selectBet, index }) => {
   return (
-    <tr>
+    <div className="table-content-container">
       <TableCell selectBet={selectBet} index={index}>
         <strong>{item.C}</strong> {item.T} {item.N}
       </TableCell>
@@ -41,6 +41,6 @@ export const TableContent = ({ item, selectBet, index }) => {
       <TableCell></TableCell>
       <TableCell></TableCell>
       <TableCell>3</TableCell>
-    </tr>
+    </div>
   );
 };
